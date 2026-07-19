@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahesh Kumar | Website Developer</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h2 class="logo">Mahesh Kumar</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="c:\Users\Knmah\Downloads\WhatsApp Image 2024-05-03 at 12.20.53 AM.jpeg"alt="mahesh kumar" class="profile-pic">
+        <h3>Hello 👋</h3>
+        <h1>I'm Mahesh Kumar</h1>
+        <h2 class="highlight">Website Developer</h2>
+        <p>I build beautiful, responsive websites for businesses using HTML, CSS, JavaScript and WordPress.</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I'm a passionate web developer from Telangana. I love turning ideas into responsive, fast websites. 
+        I specialize in frontend development and WordPress customization.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <div class="service-box">
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Modern, clean and responsive website designs.</p>
+            </div>
+            <div class="card">
+                <h3>Frontend Development</h3>
+                <p>HTML, CSS, JavaScript with pixel perfect UI.</p>
+            </div>
+            <div class="card">
+                <h3>WordPress</h3>
+                <p>Custom WordPress websites and themes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project">Project 1</div>
+            <div class="project">Project 2</div>
+            <div class="project">Project 3</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p style="margin-top:20px;">Or Email: maheshkumar@gmail.com | Phone: +91 9346403187</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Mahesh Kumar. All Rights Reserved.</p>
+    </footer>
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let name = this.name.value;
+    let email = this.email.value;
+    let number = this.number.value;
+    let message = this.message.value;
+    
+    // 1. WhatsApp Notification to YOU
+    let whatsappMsg = `🔔 New Client Lead!%0A%0AName: ${name}%0AEmail: ${email}%0ANumber: ${number}%0AMessage: ${message}`;
+    window.open(`https://wa.me/919346403187?text=${whatsappMsg}`, '_blank');
+    
+    // 2. Email Notification to YOU using formsubmit
+    fetch("https://formsubmit.co/ajax/maheshkumar@gmail.com", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({name, email, number, message})
+    });
+    
+    alert("Thank you! I got your details and will contact you soon.");
+    this.reset();
+});
+</script>
+</body>
+</html>
